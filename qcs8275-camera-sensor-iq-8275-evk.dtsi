@@ -130,7 +130,7 @@
 	};
 
 	/*cam0-ov9282*/
- 	qcom,cam-sensor16 {
+	rb4_slot0: qcom,cam-sensor16 {
  		cell-index = <16>;
  		compatible = "qcom,cam-sensor";
  		csiphy-sd-index = <0>;
@@ -363,7 +363,7 @@
 		};
 	};
 	/*cam1-ov9282*/
- 	qcom,cam-sensor17 {
+	rb4_slot1: qcom,cam-sensor17 {
  		cell-index = <17>;
  		compatible = "qcom,cam-sensor";
  		csiphy-sd-index = <1>;
@@ -672,7 +672,7 @@
 	};
 
 	/*cam2-ov9282*/
- 	qcom,cam-sensor18 {
+	rb4_slot2: qcom,cam-sensor18 {
  		cell-index = <18>;
  		compatible = "qcom,cam-sensor";
  		csiphy-sd-index = <2>;
