@@ -626,10 +626,10 @@
 			dma-coherent;
 			icp_iova_mem_map: iova-mem-map {
 				iova-mem-region-firmware {
-					/* Firmware region is 5MB */
+					/* Firmware region is 8MB */
 					iova-region-name = "firmware";
 					iova-region-start = <0x0>;
-					iova-region-len = <0x500000>;
+					iova-region-len = <0x800000>;
 					iova-region-id = <0x0>;
 					status = "ok";
 				};
