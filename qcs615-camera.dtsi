@@ -3,6 +3,7 @@
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 #include <dt-bindings/msm-camera.h>
+#include <dt-bindings/interconnect/qcom,icc.h>
 
 &tlmm {
 	cci_i2c_sda0_active: cci_i2c_sda0_active {
@@ -264,7 +265,12 @@
 &soc {
 	qcom,cam-req-mgr {
 		compatible = "qcom,cam-req-mgr";
-		status = "ok";
+		status = "okay";
+	};
+
+	qcom,cam-sync {
+		compatible = "qcom,cam-sync";
+		status = "okay";
 	};
 
 	cam_csiphy0: qcom,csiphy@ac65000 {
@@ -300,7 +306,7 @@
 		clock-rates =
 			<0 0 0 0 269333333 0 269333333 0>,
 			<0 0 0 0 384000000 0 269333333 0>;
-		status = "ok";
+		status = "okay";
 		csiphy0_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -350,7 +356,7 @@
 			<0 0 0 0 269333333 0 269333333 0>,
 			<0 0 0 0 384000000 0 269333333 0>;
 
-		status = "ok";
+		status = "okay";
 		csiphy1_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -399,7 +405,7 @@
 		clock-rates =
 			<0 0 0 0 269333333 0 269333333 0>,
 			<0 0 0 0 384000000 0 269333333 0>;
-		status = "ok";
+		status = "okay";
 		csiphy2_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -440,7 +446,7 @@
 		pinctrl-1 = <&cci_i2c_scl0_suspend &cci_i2c_sda0_suspend>;
 		pinctrl-2 = <&cci_i2c_scl1_active &cci_i2c_sda1_active>;
 		pinctrl-3 = <&cci_i2c_scl1_suspend &cci_i2c_sda1_suspend>;
-		status = "ok";
+		status = "okay";
 		cci_opp_table: opp-table {
 			compatible = "operating-points-v2";
 			opp-37500000 {
@@ -461,7 +467,7 @@
 			hw-trdhld = <6>;
 			hw-tsp = <3>;
 			cci-clk-src = <37500000>;
-			status = "ok";
+			status = "okay";
 		};
 
 		i2c_freq_400Khz_cci: qcom,i2c_fast_mode {
@@ -476,7 +482,7 @@
 			hw-trdhld = <6>;
 			hw-tsp = <3>;
 			cci-clk-src = <37500000>;
-			status = "ok";
+			status = "okay";
 		};
 
 		i2c_freq_custom_cci: qcom,i2c_custom_mode {
@@ -491,7 +497,7 @@
 			hw-trdhld = <6>;
 			hw-tsp = <3>;
 			cci-clk-src = <37500000>;
-			status = "ok";
+			status = "okay";
 		};
 
 		i2c_freq_1Mhz_cci: qcom,i2c_fast_plus_mode {
@@ -506,23 +512,22 @@
 			hw-trdhld = <3>;
 			hw-tsp = <3>;
 			cci-clk-src = <37500000>;
-			status = "ok";
+			status = "okay";
 		};
 	};
 
 	cam_smmu: qcom,cam_smmu {
 		compatible = "qcom,msm-cam-smmu", "simple-bus";
-		status = "ok";
-		force_cache_allocs;
+		status = "okay";
 
 		msm_cam_smmu_ife {
 			compatible = "qcom,msm-cam-smmu-cb";
-			iommus = <&apps_smmu 0x820 0x40>,
-				<&apps_smmu 0x840 0x0>,
-				<&apps_smmu 0x860 0x40>;
+			iommus = <&apps_smmu 0x0820 0x40>,
+			       <&apps_smmu 0x0840 0x00>,
+			       <&apps_smmu 0x0860 0x40>;
 			cam-smmu-label = "ife";
 			multiple-client-devices;
-			dma-coherent;
+			com,iommu-faults = "stall-disable", "non-fatal";
 			ife_iova_mem_map: iova-mem-map {
 				/* IO region is approximately 3.4 GB */
 				iova-mem-region-io {
@@ -530,7 +535,7 @@
 					iova-region-start = <0x7400000>;
 					iova-region-len = <0xd8c00000>;
 					iova-region-id = <0x3>;
-					status = "ok";
+					status = "okay";
 				};
 			};
 		};
@@ -540,7 +545,6 @@
 			iommus = <&apps_smmu 0xd80 0x20>,
 				<&apps_smmu  0xda0 0x20>;
 			cam-smmu-label = "jpeg";
-			dma-coherent;
 			jpeg_iova_mem_map: iova-mem-map {
 				/* IO region is approximately 3.4 GB */
 				iova-mem-region-io {
@@ -548,7 +552,7 @@
 					iova-region-start = <0x7400000>;
 					iova-region-len = <0xd8c00000>;
 					iova-region-id = <0x3>;
-					status = "ok";
+					status = "okay";
 				};
 			};
 		};
@@ -567,7 +571,6 @@
 				<&apps_smmu 0x0d00 0x0>,
 				<&apps_smmu 0x0d20 0x0>;
 			cam-smmu-label = "icp";
-			dma-coherent;
 			icp_iova_mem_map: iova-mem-map {
 				iova-mem-region-firmware {
 					/* Firmware region is 8MB */
@@ -575,7 +578,7 @@
 					iova-region-start = <0x0>;
 					iova-region-len = <0x800000>;
 					iova-region-id = <0x0>;
-					status = "ok";
+					status = "okay";
 				};
 
 				iova-mem-region-shared {
@@ -585,7 +588,7 @@
 					iova-region-len = <0x9600000>;
 					iova-region-id = <0x1>;
 					iova-granularity = <0x15>;
-					status = "ok";
+					status = "okay";
 				};
 
 				iova-mem-region-secondary-heap {
@@ -594,7 +597,7 @@
 					iova-region-start = <0x10A00000>;
 					iova-region-len = <0x100000>;
 					iova-region-id = <0x4>;
-					status = "ok";
+					status = "okay";
 				};
 
 				iova-mem-region-io {
@@ -603,7 +606,7 @@
 					iova-region-start = <0x10C00000>;
 					iova-region-len = <0xCF300000>;
 					iova-region-id = <0x3>;
-					status = "ok";
+					status = "okay";
 				};
 
 				iova-mem-qdss-region {
@@ -613,7 +616,7 @@
 					iova-region-len = <0x100000>;
 					iova-region-id = <0x5>;
 					qdss-phy-addr = <0x16790000>;
-					status = "ok";
+					status = "okay";
 				};
 			};
 		};
@@ -622,7 +625,6 @@
 			compatible = "qcom,msm-cam-smmu-cb";
 			iommus = <&apps_smmu 0x0c00 0x0>;
 			cam-smmu-label = "cpas-cdm";
-			dma-coherent;
 			cpas_cdm_iova_mem_map: iova-mem-map {
 				iova-mem-region-io {
 					/* IO region is approximately 3.4 GB */
@@ -630,7 +632,7 @@
 					iova-region-start = <0x7400000>;
 					iova-region-len = <0xd8c00000>;
 					iova-region-id = <0x3>;
-					status = "ok";
+					status = "okay";
 				};
 			};
 		};
@@ -640,7 +642,6 @@
 			iommus = <&apps_smmu 0x0cc0 0x0>,
 				<&apps_smmu 0x0d40 0x0>;
 			cam-smmu-label = "lrme";
-			dma-coherent;
 			lrme_iova_mem_map: iova-mem-map {
 				iova-mem-region-shared {
 					/* Shared region is 100MB long */
@@ -648,7 +649,7 @@
 					iova-region-start = <0x7400000>;
 					iova-region-len = <0x6400000>;
 					iova-region-id = <0x1>;
-					status = "ok";
+					status = "okay";
 				};
 				/* IO region is approximately 3.3 GB */
 				iova-mem-region-io {
@@ -656,7 +657,7 @@
 					iova-region-start = <0xd800000>;
 					iova-region-len = <0xd2800000>;
 					iova-region-id = <0x3>;
-					status = "ok";
+					status = "okay";
 				};
 			};
 		};
@@ -711,18 +712,18 @@
 			"cam_hf_0_mnoc",
 			"cam_hf_1_mnoc",
 			"cam_sf_0_mnoc";
-		interconnects = <&gem_noc MASTER_APPSS_PROC 0
-			&config_noc SLAVE_CAMERA_CFG 0>,
-				<&mmss_noc MASTER_CAMNOC_HF0 0
-			&mc_virt SLAVE_EBI1 0>,
-				<&mmss_noc MASTER_CAMNOC_HF1 0
-			&mc_virt SLAVE_EBI1 0>,
-				<&mmss_noc MASTER_CAMNOC_SF 0
-			&mc_virt SLAVE_EBI1 0>;
-		cam-ahb-num-cases = <7>;
+		interconnects = <&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ACTIVE_ONLY
+			&config_noc SLAVE_CAMERA_CFG QCOM_ICC_TAG_ACTIVE_ONLY>,
+				<&mmss_noc MASTER_CAMNOC_HF0 QCOM_ICC_TAG_ALWAYS
+			&mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
+				<&mmss_noc MASTER_CAMNOC_HF1 QCOM_ICC_TAG_ALWAYS
+			&mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
+				<&mmss_noc MASTER_CAMNOC_SF QCOM_ICC_TAG_ALWAYS
+			&mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>;
+		cam-ahb-num-cases = <9>;
 		cam-ahb-bw-KBps =
 			<0 0>, <0 76800>, <0 150000>, <0 150000>,
-			<0 300000>, <0 300000>, <0 300000>;
+			<0 300000>, <0 300000>, <0 300000>, <0 300000>, <0 300000>;
 		vdd-corners = <RPMH_REGULATOR_LEVEL_RETENTION
 			RPMH_REGULATOR_LEVEL_MIN_SVS
 			RPMH_REGULATOR_LEVEL_LOW_SVS
@@ -745,7 +746,7 @@
 			"cam-cdm-intf0", "cpas-cdm0", "bps0",
 			"icp0", "jpeg-dma0", "jpeg-enc0", "lrmecpas0";
 
-		status = "ok";
+		status = "okay";
 		cpas_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1133,7 +1134,7 @@
 			"jpegdma",
 			"jpegenc",
 			"lrmecdm";
-		status = "ok";
+		status = "okay";
 	};
 
 	qcom,cpas-cdm0@ac48000 {
@@ -1165,7 +1166,7 @@
 		cdm-client-names = "ife0", "ife1", "ife2",
 				   "ife3", "dualife";
 		single-context-cdm;
-		status = "ok";
+		status = "okay";
 		cpas_cdm_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1179,7 +1180,7 @@
 	cam_isp_mgr: qcom,cam-isp {
 		compatible = "qcom,cam-isp";
 		arch-compat = "ife";
-		status = "ok";
+		status = "okay";
 	};
 
 	cam_csid0: qcom,csid0@acb3000 {
@@ -1228,7 +1229,7 @@
 		operating-points-v2 = <&csid0_opp_table>;
 		src-clock-name = "cam_cc_ife_0_csid_clk_src";
 		clock-control-debugfs = "true";
-		status = "ok";
+		status = "okay";
 		csid0_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1301,7 +1302,7 @@
 		clock-rates-option = <600000000>;
 		cam_hw_pid = <1>;
 		clock-control-debugfs = "true";
-		status = "ok";
+		status = "okay";
 		vfe0_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1374,7 +1375,7 @@
 		src-clock-name = "cam_cc_ife_1_csid_clk_src";
 		operating-points-v2 = <&csid1_opp_table>;
 		clock-control-debugfs = "true";
-		status = "ok";
+		status = "okay";
 		csid1_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1447,7 +1448,7 @@
 		clock-rates-option = <600000000>;
 		cam_hw_pid = <2>;
 		clock-control-debugfs = "true";
-		status = "ok";
+		status = "okay";
 		vfe1_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1518,7 +1519,7 @@
 		src-clock-name = "cam_cc_ife_lite_csid_clk_src";
 		operating-points-v2 = <&csid_lite0_opp_table>;
 		clock-control-debugfs = "true";
-		status = "ok";
+		status = "okay";
 		csid_lite0_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1585,7 +1586,7 @@
 		operating-points-v2 = <&vfe_lite0_opp_table>;
 		cam_hw_pid = <3>;
 		clock-control-debugfs = "true";
-		status = "ok";
+		status = "okay";
 		vfe_lite0_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1622,7 +1623,7 @@
 		num-bps = <1>;
 		ipe0-mask = <0x1000>;
 		icp_pc_en;
-		status = "ok";
+		status = "okay";
 	};
 
 	cam_icp: qcom,icp@ac00000 {
@@ -1666,7 +1667,7 @@
 		fw_name = "CAMERA_ICP.elf";
 		ubwc-cfg = <0x73 0x1CF>;
 		cam_hw_pid = <15>;
-		status = "ok";
+		status = "okay";
 		a5_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1726,7 +1727,7 @@
 		src-clock-name = "cam_cc_ipe_0_clk_src";
 		operating-points-v2 = <&ipe0_opp_table>;
 		cam_hw_pid = <4 8>;
-		status = "ok";
+		status = "okay";
 		ipe0_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1786,7 +1787,7 @@
 		src-clock-name = "cam_cc_bps_clk_src";
 		operating-points-v2 = <&bps_opp_table>;
 		cam_hw_pid = <5 9>;
-		status = "ok";
+		status = "okay";
 		bps_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1823,7 +1824,7 @@
 			"qcom,jpegdma";
 		num-jpeg-enc = <1>;
 		num-jpeg-dma = <1>;
-		status = "ok";
+		status = "okay";
 	};
 
 	cam_jpeg_enc: qcom,jpegenc@ac4e000 {
@@ -1854,7 +1855,7 @@
 		src-clock-name = "cam_cc_jpeg_clk_src";
 		operating-points-v2 = <&jpeg_enc_opp_table>;
 		clock-cntl-level = "turbo";
-		status = "ok";
+		status = "okay";
 		jpeg_enc_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1893,7 +1894,7 @@
 		src-clock-name = "cam_cc_jpeg_clk_src";
 		operating-points-v2 = <&jpeg_dma_opp_table>;
 		clock-cntl-level = "turbo";
-		status = "ok";
+		status = "okay";
 		jpeg_dma_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -1907,7 +1908,7 @@
 	cam_lrme_mgr: qcom,cam-lrme {
 		compatible = "qcom,cam-lrme";
 		arch-compat = "lrme";
-		status = "ok";
+		status = "okay";
 	};
 
 	cam_lrme: qcom,lrme@ac6b000 {
@@ -1941,7 +1942,7 @@
 		src-clock-name = "cam_cc_lrme_clk_src";
 		operating-points-v2 = <&lrme_opp_table>;
 		cam_hw_pid = <6 10>;
-		status = "ok";
+		status = "okay";
 		lrme_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
