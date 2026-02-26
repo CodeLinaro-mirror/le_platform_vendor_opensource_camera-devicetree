@@ -576,7 +576,7 @@
 			drive-strength = <2>; /* 2 MA */
 		};
 	};
-	
+
 	cam_sensor_active_rst0: cam_sensor_active_rst0 {
 		/* RESET */
 		mux {
@@ -1681,6 +1681,7 @@
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-600000000 {
 				opp-hz = /bits/ 64 <600000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -1762,6 +1763,7 @@
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-600000000 {
 				opp-hz = /bits/ 64 <600000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -1811,6 +1813,7 @@
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-480000000 {
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -1860,6 +1863,7 @@
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-480000000 {
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -1909,6 +1913,7 @@
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-480000000 {
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -1958,6 +1963,7 @@
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-480000000 {
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2007,6 +2013,7 @@
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-480000000 {
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2056,6 +2063,7 @@
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-480000000 {
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2105,6 +2113,7 @@
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-480000000 {
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2154,6 +2163,7 @@
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-480000000 {
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2203,6 +2213,7 @@
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-480000000 {
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2252,6 +2263,7 @@
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-480000000 {
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2293,6 +2305,7 @@
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-600000000 {
 				opp-hz = /bits/ 64 <600000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2334,6 +2347,7 @@
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-600000000 {
 				opp-hz = /bits/ 64 <600000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2341,7 +2355,7 @@
 		};
 	};
 
-	cam_icp_firmware: qcom,cam-icp {
+	qcom,cam-icp {
 		compatible = "qcom,cam-icp";
 		compat-hw-name = "qcom,icp",
 			"qcom,ipe0";
@@ -2395,6 +2409,7 @@
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-600000000 {
 				opp-hz = /bits/ 64 <600000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2443,6 +2458,7 @@
 				opp-hz = /bits/ 64 <480000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-600000000 {
 				opp-hz = /bits/ 64 <600000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2451,7 +2467,7 @@
 
 	};
 
-	cam_cpas: qcom,cam-cpas {
+	qcom,cam-cpas {
 		cell-index = <0>;
 		compatible = "qcom,cam-cpas";
 		label = "cpas";
@@ -2541,7 +2557,7 @@
 			"rt-cdm3", "icp0", "tpg17", "tpg18", "tpg19";
 
 		status = "ok";
-		enable-secure-qos-update = <1>;
+		enable-secure-qos-update;
 		cpas_opp_table: opp-table {
 			compatible = "operating-points-v2";
 
@@ -2549,6 +2565,7 @@
 				opp-hz = /bits/ 64 <300000000>;
 				required-opps = <&rpmhpd_opp_svs_l1>;
 			};
+
 			opp-400000000 {
 				opp-hz = /bits/ 64 <400000000>;
 				required-opps = <&rpmhpd_opp_nom>;
@@ -2704,6 +2721,7 @@
 					CAM_CPAS_PATH_DATA_IFE_PIXEL_RAW>;
 					parent-node = <&level1_rt_wr0>;
 				};
+
 				ife_1_wr_0: ife-1-wr-0 {
 					cell-index = <17>;
 					node-name = "ife-1-wr-0";
@@ -2720,6 +2738,7 @@
 					CAM_CPAS_PATH_DATA_IFE_PIXEL_RAW>;
 					parent-node = <&level1_rt_wr0>;
 				};
+
 				ife_lite_0_wr_0: ife-lite-0-wr-0 {
 					cell-index = <18>;
 					node-name = "ife-lite-0-wr-0";
@@ -2736,6 +2755,7 @@
 					CAM_CPAS_PATH_DATA_IFE_PIXEL_RAW>;
 					parent-node = <&level1_rt_wr0>;
 				};
+
 				ife_lite_1_wr_0: ife-lite-1-wr-0 {
 					cell-index = <19>;
 					node-name = "ife-lite-1-wr-0";
@@ -2752,6 +2772,7 @@
 					CAM_CPAS_PATH_DATA_IFE_PIXEL_RAW>;
 					parent-node = <&level1_rt_wr0>;
 				};
+
 				ife_lite_2_wr_0: ife-lite-2-wr-0 {
 					cell-index = <20>;
 					node-name = "ife-lite-2-wr-0";
@@ -2768,6 +2789,7 @@
 					CAM_CPAS_PATH_DATA_IFE_PIXEL_RAW>;
 					parent-node = <&level1_rt_wr0>;
 				};
+
 				ife_lite_3_wr_0: ife-lite-3-wr-0 {
 					cell-index = <21>;
 					node-name = "ife-lite-3-wr-0";
@@ -2784,6 +2806,7 @@
 					CAM_CPAS_PATH_DATA_IFE_PIXEL_RAW>;
 					parent-node = <&level1_rt_wr0>;
 				};
+
 				ife_lite_4_wr_0: ife-lite-4-wr-0 {
 					cell-index = <22>;
 					node-name = "ife-lite-4-wr-0";
@@ -2800,6 +2823,7 @@
 					CAM_CPAS_PATH_DATA_IFE_PIXEL_RAW>;
 					parent-node = <&level1_rt_wr0>;
 				};
+
 				ife_0_wr_1: ife-0-wr-1 {
 					cell-index = <23>;
 					node-name = "ife-0-wr-1";
@@ -2816,6 +2840,7 @@
 					CAM_CPAS_PATH_DATA_IFE_DISP>;
 					parent-node = <&level1_rt_wr1>;
 				};
+
 				ife_1_wr_1: ife-1-wr-1 {
 					cell-index = <24>;
 					node-name = "ife-1-wr-1";
@@ -2832,6 +2857,7 @@
 					CAM_CPAS_PATH_DATA_IFE_DISP>;
 					parent-node = <&level1_rt_wr1>;
 				};
+
 				sfe_0_rd_0: sfe-0-rd-0 {
 					cell-index = <25>;
 					node-name = "sfe-0-rd-0";
@@ -2844,6 +2870,7 @@
 					<CAM_CPAS_PATH_DATA_SFE_NRDI>;
 					parent-node = <&level1_rt_rd0>;
 				};
+
 				sfe_1_rd_0: sfe-1-rd-0 {
 					cell-index = <26>;
 					node-name = "sfe-1-rd-0";
@@ -2856,6 +2883,7 @@
 					<CAM_CPAS_PATH_DATA_SFE_NRDI>;
 					parent-node = <&level1_rt_rd0>;
 				};
+
 				ipe_0_wr_2: ipe-0-wr-2 {
 					cell-index = <27>;
 					node-name = "ipe-0-wr-2";
@@ -2871,6 +2899,7 @@
 					CAM_CPAS_PATH_DATA_IPE_WR_APP>;
 					parent-node = <&level2_nrt_wr2>;
 				};
+
 				ipe_0_rd_all: ipe-0-rd-all {
 					cell-index = <28>;
 					node-name = "ipe-0-rd-all";
@@ -2883,6 +2912,7 @@
 					CAM_CPAS_PATH_DATA_IPE_RD_REF>;
 					parent-node = <&level2_nrt_rd1>;
 				};
+
 				rt_cdm0_all_rd_2: rt-cdm0-all-rd-2 {
 					cell-index = <29>;
 					node-name = "rt-cdm0-all-rd-2";
@@ -2892,6 +2922,7 @@
 					<CAM_CPAS_TRANSACTION_READ>;
 					parent-node = <&level1_nrt_rd2>;
 				};
+
 				rt_cdm1_all_rd_2: rt-cdm1-all-rd-2 {
 					cell-index = <30>;
 					node-name = "rt-cdm1-all-rd-2";
@@ -2901,6 +2932,7 @@
 					<CAM_CPAS_TRANSACTION_READ>;
 					parent-node = <&level1_nrt_rd2>;
 				};
+
 				rt_cdm2_all_rd_2: rt-cdm2-all-rd-2 {
 					cell-index = <31>;
 					node-name = "rt-cdm2-all-rd-2";
@@ -2910,6 +2942,7 @@
 					<CAM_CPAS_TRANSACTION_READ>;
 					parent-node = <&level1_nrt_rd2>;
 				};
+
 				rt_cdm3_all_rd_2: rt-cdm3-all-rd-2 {
 					cell-index = <32>;
 					node-name = "rt-cdm3-all-rd-2";
@@ -2919,6 +2952,7 @@
 					<CAM_CPAS_TRANSACTION_READ>;
 					parent-node = <&level1_nrt_rd2>;
 				};
+
 				ipe_cdm0_all_rd: ipe-cdm0-all-rd {
 					cell-index = <33>;
 					node-name = "ipe-cdm0-all-rd";
@@ -2928,6 +2962,7 @@
 					<CAM_CPAS_TRANSACTION_READ>;
 					parent-node = <&level1_nrt_rd2>;
 				};
+
 				icp_all_rd: icp-all-rd {
 					cell-index = <34>;
 					node-name = "icp-all-rd";

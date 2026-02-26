@@ -12,3 +12,4 @@
 #include <dt-bindings/power/qcom-rpmpd.h>
 
 #include "qcs615-camera.dtsi"
+#include "qcs615-camera-sensor.dtsi"

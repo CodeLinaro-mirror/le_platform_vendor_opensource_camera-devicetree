@@ -126,7 +126,7 @@
 	};
 
 	/*cam0-ov9282*/
-	qcom,cam-sensor16 {
+	rb4_slot0: qcom,cam-sensor16 {
 		cell-index = <16>;
 		compatible = "qcom,cam-sensor";
 		csiphy-sd-index = <0>;
@@ -147,8 +147,8 @@
 		pinctrl-1 = <&cam_sensor_mclk0_suspend
 		                &cam_sensor_suspend_rst0>;
 		gpios = <&tlmm 67 0>,
-			<&tlmm 73 0>,
-			<&expander2 0 0>;
+			<&expander2 0 0>,
+			<&tlmm 73 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
@@ -182,8 +182,8 @@
 		pinctrl-1 = <&cam_sensor_mclk0_suspend
 				 &cam_sensor_suspend_rst0>;
 		gpios = <&tlmm 67 0>,
-			<&tlmm 73 0>,
-			<&expander2 0 0>;
+			<&expander2 0 0>,
+			<&tlmm 73 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
@@ -223,8 +223,8 @@
 		pinctrl-1 = <&cam_sensor_mclk0_suspend
 		                &cam_sensor_suspend_rst0>;
 		gpios = <&tlmm 67 0>,
-			<&tlmm 73 0>,
-			<&expander2 0 0>;
+			<&expander2 0 0>,
+			<&tlmm 73 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
@@ -356,7 +356,7 @@
 	};
 
 	/*cam1-ov9282*/
-	qcom,cam-sensor17 {
+	rb4_slot1: qcom,cam-sensor17 {
 		cell-index = <17>;
 		compatible = "qcom,cam-sensor";
 		csiphy-sd-index = <1>;
@@ -377,8 +377,8 @@
 		pinctrl-1 = <&cam_sensor_mclk1_suspend
 		                &cam_sensor_suspend_rst1>;
 		gpios = <&tlmm 68 0>,
-			<&tlmm 74 0>,
-			<&expander2 1 0>;
+			<&expander2 1 0>,
+			<&tlmm 74 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
@@ -412,8 +412,8 @@
 		pinctrl-1 = <&cam_sensor_mclk1_suspend
 				 &cam_sensor_suspend_rst1>;
 		gpios = <&tlmm 68 0>,
-			<&tlmm 74 0>,
-			<&expander2 1 0>;
+			<&expander2 1 0>,
+			<&tlmm 74 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
@@ -452,8 +452,8 @@
 		pinctrl-1 = <&cam_sensor_mclk1_suspend
 				&cam_sensor_suspend_rst1>;
 		gpios = <&tlmm 68 0>,
-			<&tlmm 74 0>,
-			<&expander2 1 0>;
+			<&expander2 1 0>,
+			<&tlmm 74 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
@@ -487,8 +487,8 @@
 		pinctrl-1 = <&cam_sensor_mclk1_suspend
 				 &cam_sensor_suspend_rst1>;
 		gpios = <&tlmm 68 0>,
-			<&tlmm 74 0>,
-			<&expander2 1 0>;
+			<&expander2 1 0>,
+			<&tlmm 74 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
@@ -528,8 +528,8 @@
 		pinctrl-1 = <&cam_sensor_mclk1_suspend
 		                &cam_sensor_suspend_rst1>;
 		gpios = <&tlmm 68 0>,
-			<&tlmm 74 0>,
-			<&expander2 1 0>;
+			<&expander2 1 0>,
+			<&tlmm 74 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
@@ -659,7 +659,7 @@
 		};
 	};
 	/*cam2-ov9282*/
-	qcom,cam-sensor18 {
+	rb4_slot2: qcom,cam-sensor18 {
 		cell-index = <18>;
 		compatible = "qcom,cam-sensor";
 		csiphy-sd-index = <2>;
@@ -680,8 +680,8 @@
 		pinctrl-1 = <&cam_sensor_mclk2_suspend
 		                &cam_sensor_suspend_rst2>;
 		gpios = <&tlmm 69 0>,
-			<&tlmm 75 0>,
-			<&expander2 2 0>;
+			<&expander2 2 0>,
+			<&tlmm 75 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
@@ -715,8 +715,8 @@
 		pinctrl-1 = <&cam_sensor_mclk2_suspend
 				 &cam_sensor_suspend_rst2>;
 		gpios = <&tlmm 69 0>,
-			<&tlmm 75 0>,
-			<&expander2 2 0>;
+			<&expander2 2 0>,
+			<&tlmm 75 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
@@ -756,8 +756,8 @@
 		pinctrl-1 = <&cam_sensor_mclk2_suspend
 		                &cam_sensor_suspend_rst2>;
 		gpios = <&tlmm 69 0>,
-			<&tlmm 75 0>,
-			<&expander2 2 0>;
+			<&expander2 2 0>,
+			<&tlmm 75 0>;
 		gpio-reset = <1>;
 		gpio-custom1 = <2>;
 		gpio-req-tbl-num = <0 1 2>;
