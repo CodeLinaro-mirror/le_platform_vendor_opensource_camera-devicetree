@@ -999,6 +999,7 @@
 				<&apps_smmu 0x0CC0 0x480>;
 			cam-smmu-label = "icp";
 			qcom,iommu-faults = "stall-disable", "non-fatal";
+			iova-region-discard = <0xe0000000 0x800000>;
 			dma-coherent;
 			icp_iova_mem_map: iova-mem-map {
 				iova-mem-region-shared {
@@ -1033,6 +1034,7 @@
 					iova-region-start = <0x10c00000>;
 					iova-region-len = <0xee300000>;
 					iova-region-id = <0x3>;
+					iova-region-discard = <0xe0000000 0x800000>;
 					status = "ok";
 				};
 
