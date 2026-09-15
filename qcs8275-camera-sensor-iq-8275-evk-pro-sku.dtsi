@@ -291,10 +291,6 @@
 			"CCI_TIMER0",
 			"CCI_TIMER1",
 			"CCI_TIMER2";
-		gpio-reset = <0>;
-		gpio-req-tbl-num = <0>;
-		gpio-req-tbl-flags = <0>;
-		gpio-req-tbl-label = "CAM_RESET1";
 		cci-master = <0>;
 		clocks = <&camcc CAM_CC_MCLK1_CLK>;
 		clock-names = "cam_clk";
@@ -530,10 +526,6 @@
 			"CCI_TIMER0",
 			"CCI_TIMER1",
 			"CCI_TIMER2";
-		gpio-reset = <0>;
-		gpio-req-tbl-num = <0>;
-		gpio-req-tbl-flags = <0>;
-		gpio-req-tbl-label = "CAM_RESET2";
 		cci-master = <0>;
 		clocks = <&camcc CAM_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
