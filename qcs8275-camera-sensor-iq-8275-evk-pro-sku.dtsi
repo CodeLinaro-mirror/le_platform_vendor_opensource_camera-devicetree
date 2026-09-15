@@ -9,7 +9,7 @@
 		compatible = "qcom,cam-res-mgr";
 		status = "ok";
 		gpios-shared = <609 610 611>;
-		gpios-shared-pinctrl = <599 600 601 585>;
+		gpios-shared-pinctrl = <599 600 601>;
 		shared-pctrl-gpio-names = "cci_timer0", "cci_timer1",
 			"cci_timer2";
 		pinctrl-names = "cci_timer0_active", "cci_timer0_suspend",
