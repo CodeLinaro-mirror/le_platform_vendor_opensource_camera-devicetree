@@ -5,6 +5,266 @@
 #include <dt-bindings/msm-camera.h>
 
 &tlmm {
+	cci_timer0_active: cci_timer0_active {
+		mux {
+			pins = "gpio63";
+			function = "cci_timer0";
+		};
+
+		config {
+			pins = "gpio63";
+			bias-disable;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer0_suspend: cci_timer0_suspend {
+		mux {
+			pins = "gpio63";
+			function = "cci_timer0";
+		};
+
+		config {
+			pins = "gpio63";
+			bias-pull-down;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer1_active: cci_timer1_active {
+		mux {
+			pins = "gpio64";
+			function = "cci_timer1";
+		};
+
+		config {
+			pins = "gpio64";
+			bias-disable;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer1_suspend: cci_timer1_suspend {
+		mux {
+			pins = "gpio64";
+			function = "cci_timer1";
+		};
+
+		config {
+			pins = "gpio64";
+			bias-pull-down;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer2_active: cci_timer2_active {
+		mux {
+			pins = "gpio65";
+			function = "cci_timer2";
+		};
+
+		config {
+			pins = "gpio65";
+			bias-disable;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer2_suspend: cci_timer2_suspend {
+		mux {
+			pins = "gpio65";
+			function = "cci_timer2";
+		};
+
+		config {
+			pins = "gpio65";
+			bias-pull-down;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer3_active: cci_timer3_active {
+		mux {
+			pins = "gpio49";
+			function = "cci_timer3";
+		};
+
+		config {
+			pins = "gpio49";
+			bias-disable;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer3_suspend: cci_timer3_suspend {
+		mux {
+			pins = "gpio49";
+			function = "cci_timer3";
+		};
+
+		config {
+			pins = "gpio49";
+			bias-pull-down;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer4_active: cci_timer4_active {
+		mux {
+			pins = "gpio50";
+			function = "cci_timer4";
+		};
+
+		config {
+			pins = "gpio50";
+			bias-disable;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer4_suspend: cci_timer4_suspend {
+		mux {
+			pins = "gpio50";
+			function = "cci_timer4";
+		};
+
+		config {
+			pins = "gpio50";
+			bias-pull-down;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer5_active: cci_timer5_active {
+		mux {
+			pins = "gpio19";
+			function = "cci_timer5";
+		};
+
+		config {
+			pins = "gpio19";
+			bias-disable;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer5_suspend: cci_timer5_suspend {
+		mux {
+			pins = "gpio19";
+			function = "cci_timer5";
+		};
+
+		config {
+			pins = "gpio19";
+			bias-pull-down;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer6_active: cci_timer6_active {
+		mux {
+			pins = "gpio20";
+			function = "cci_timer6";
+		};
+
+		config {
+			pins = "gpio20";
+			bias-disable;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer6_suspend: cci_timer6_suspend {
+		mux {
+			pins = "gpio20";
+			function = "cci_timer6";
+		};
+
+		config {
+			pins = "gpio20";
+			bias-pull-down;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer7_active: cci_timer7_active {
+		mux {
+			pins = "gpio21";
+			function = "cci_timer7";
+		};
+
+		config {
+			pins = "gpio21";
+			bias-disable;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer7_suspend: cci_timer7_suspend {
+		mux {
+			pins = "gpio21";
+			function = "cci_timer7";
+		};
+
+		config {
+			pins = "gpio21";
+			bias-pull-down;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer8_active: cci_timer8_active {
+		mux {
+			pins = "gpio22";
+			function = "cci_timer8";
+		};
+
+		config {
+			pins = "gpio22";
+			bias-disable;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer8_suspend: cci_timer8_suspend {
+		mux {
+			pins = "gpio22";
+			function = "cci_timer8";
+		};
+
+		config {
+			pins = "gpio22";
+			bias-pull-down;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer9_active: cci_timer9_active {
+		mux {
+			pins = "gpio23";
+			function = "cci_timer9";
+		};
+
+		config {
+			pins = "gpio23";
+			bias-disable;
+			drive-strength = <6>;
+		};
+	};
+
+	cci_timer9_suspend: cci_timer9_suspend {
+		mux {
+			pins = "gpio23";
+			function = "cci_timer9";
+		};
+
+		config {
+			pins = "gpio23";
+			bias-pull-down;
+			drive-strength = <6>;
+		};
+	};
+
 	cci_i2c_sda0_active: cci_i2c_sda0_active {
 		mux {
 			/* CLK, DATA */

@@ -9,6 +9,18 @@
 		compatible = "qcom,cam-res-mgr";
 		status = "ok";
 		gpios-shared = <609 610 611>;
+		gpios-shared-pinctrl = <599 600 601 585>;
+		shared-pctrl-gpio-names = "cci_timer0", "cci_timer1",
+			"cci_timer2";
+		pinctrl-names = "cci_timer0_active", "cci_timer0_suspend",
+			"cci_timer1_active", "cci_timer1_suspend",
+			"cci_timer2_active", "cci_timer2_suspend";
+		pinctrl-0 = <&cci_timer0_active>;
+		pinctrl-1 = <&cci_timer0_suspend>;
+		pinctrl-2 = <&cci_timer1_active>;
+		pinctrl-3 = <&cci_timer1_suspend>;
+		pinctrl-4 = <&cci_timer2_active>;
+		pinctrl-5 = <&cci_timer2_suspend>;
 	};
 };
 
@@ -32,11 +44,17 @@
 		pinctrl-names = "cam_default", "cam_suspend";
 		pinctrl-0 = <&cam_sensor_mclk0_active>;
 		pinctrl-1 = <&cam_sensor_mclk0_suspend>;
-		gpios = <&tlmm 73 0>;
+		gpios = <&tlmm 73 0>,
+				<&tlmm 63 0>,
+				<&tlmm 64 0>,
+				<&tlmm 65 0>;
 		gpio-reset = <0>;
-		gpio-req-tbl-num = <0>;
-		gpio-req-tbl-flags = <0>;
-		gpio-req-tbl-label = "CAM_RESET0";
+		gpio-req-tbl-num = <0 1 2 3>;
+		gpio-req-tbl-flags = <0 0 0 0>;
+		gpio-req-tbl-label = "CAM_RESET0",
+			"CCI_TIMER0",
+			"CCI_TIMER1",
+			"CCI_TIMER2";
 		cci-master = <0>;
 		clocks = <&camcc CAM_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
@@ -262,7 +280,17 @@
 		pinctrl-names = "cam_default", "cam_suspend";
 		pinctrl-0 = <&cam_sensor_mclk1_active>;
 		pinctrl-1 = <&cam_sensor_mclk1_suspend>;
-		gpios = <&tlmm 74 0>;
+		gpios = <&tlmm 74 0>,
+				<&tlmm 63 0>,
+				<&tlmm 64 0>,
+				<&tlmm 65 0>;
+		gpio-reset = <0>;
+		gpio-req-tbl-num = <0 1 2 3>;
+		gpio-req-tbl-flags = <0 0 0 0>;
+		gpio-req-tbl-label = "CAM_RESET1",
+			"CCI_TIMER0",
+			"CCI_TIMER1",
+			"CCI_TIMER2";
 		gpio-reset = <0>;
 		gpio-req-tbl-num = <0>;
 		gpio-req-tbl-flags = <0>;
@@ -491,7 +519,17 @@
 		pinctrl-names = "cam_default", "cam_suspend";
 		pinctrl-0 = <&cam_sensor_mclk2_active>;
 		pinctrl-1 = <&cam_sensor_mclk2_suspend>;
-		gpios = <&tlmm 75 0>;
+		gpios = <&tlmm 75 0>,
+				<&tlmm 63 0>,
+				<&tlmm 64 0>,
+				<&tlmm 65 0>;
+		gpio-reset = <0>;
+		gpio-req-tbl-num = <0 1 2 3>;
+		gpio-req-tbl-flags = <0 0 0 0>;
+		gpio-req-tbl-label = "CAM_RESET2",
+			"CCI_TIMER0",
+			"CCI_TIMER1",
+			"CCI_TIMER2";
 		gpio-reset = <0>;
 		gpio-req-tbl-num = <0>;
 		gpio-req-tbl-flags = <0>;
